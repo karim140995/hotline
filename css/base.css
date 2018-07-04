@@ -1,0 +1,328 @@
+
+@import url("fonts.css");
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+small, strong,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, menu, nav ,section{
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+}
+table {
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+table {
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th {
+    cursor: pointer;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+   display: block;
+}
+
+
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+body {
+	
+  background: #151719 url(../images/bg.png);
+	font: 15px/30px opensans-regular, sans-serif;
+	color: #838C95;
+   -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+}
+
+/*  2. Typography
+       Vertical rhythm with leading derived from 6
+--------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+   color: #313131;
+	font-family: montserrat-regular, sans-serif;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+h1 { font-size: 42px; line-height: 48px; margin-bottom: 12px;}
+h2 { font-size: 30px; line-height: 42px; margin-bottom: 6px; }
+h3 { font-size: 24px; line-height: 30px; margin-bottom: 12px; }
+h4 { font-size: 21px; line-height: 30px; margin-bottom: 6px; }
+h5 { font-size: 18px; line-height: 30px; }
+h6 { font-size: 14px; line-height: 30px; }
+.subheader { }
+
+p { margin: 0 0 24px 0; }
+p img { margin: 0; }
+p.lead { font: 20px/36px opensans-light, sans-serif; }
+
+/* for 'em' and 'strong' tags, font-size and line-height should be same with
+the body tag due to rendering problems on some browsers*/
+strong, b { font: 15px/30px opensans-bold, sans-serif; }
+small { font-size: 11px; line-height: inherit; }
+
+hr { border: solid #E0E0E0; border-width: 1px 0 0; clear: both; margin: 11px 0 30px; height: 0; }
+
+
+/*   Links  */
+
+a, a:visited {
+text-decoration: none;
+outline: 0;
+color:#11ABB0;
+
+-webkit-transition:color .3s ease-in-out;
+-moz-transition:color .3s ease-in-out;
+-o-transition:color .3s ease-in-out;
+transition:color .3s ease-in-out;
+
+}
+
+a:hover, a:focus { color:#333; }
+p a, p a:visited { line-height: inherit; }
+
+
+/* List */
+
+ul, ol { margin-bottom: 24px; margin-top: 12px; }
+ul { list-style: none outside; }
+ol { list-style: decimal; }
+ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+ul.square { list-style: square outside; }
+ul.circle { list-style: circle outside; }
+ul.disc { list-style: disc outside; }
+ul ul, ul ol,
+ol ol, ol ul { margin: 6px 0 6px 30px; }
+ul ul li, ul ol li,
+ol ol li, ol ul li { margin-bottom: 6px; }
+li { line-height: 18px; margin-bottom: 12px; }
+ul.large li { }
+li p { }
+
+
+/* definition list */
+dl { margin: 12px 0; }
+dt { margin: 0; color:#11ABB0; }
+dd { margin: 0 0 0 20px; }
+
+
+/* Images */
+
+img {
+   max-width: 100%;
+   height: auto;
+}
+
+img.pull-right { margin: 12px 0px 0px 18px; }
+img.pull-left { margin: 12px 18px 0px 0px; }
+
+/* Buttons */
+
+.button,
+.button:visited,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+   font: 16px/30px montserrat-bold, sans-serif;
+   background: #11ABB0;
+   display: inline-block;
+	text-decoration: none;
+   letter-spacing: 0;
+   color: #fff;
+	padding: 18px 18px;
+	margin-bottom: 18px;
+   border: none;
+   cursor: pointer;
+   height: auto;
+
+    -webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+
+   -moz-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   border-radius: 3px;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+   background: #3d4145;
+   color: #fff;
+}
+
+.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+   background: #3d4145;
+   color: #fff;
+}
+
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="reset"].full-width,
+input[type="button"].full-width {
+	width: 100%;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	text-align: center;
+}
+
+
+/* Forms  */
+
+form { margin-bottom: 24px; }
+fieldset { margin-bottom: 24px; }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  	display: block;
+   padding: 18px 18px;
+   margin: 0 0 24px 0;
+   border: 0;
+   outline: none;
+   vertical-align: middle;
+   min-width: 250px;
+	max-width: 100%;
+   font-size: 15px;
+   line-height: 24px;
+	color: #738182;
+	background: #CFD4D8;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+   color: #fff;
+	background-color: #3d4145;
+}
+
+textarea { min-height: 180px; }
+
+label,
+legend {
+   font: 14px/24px opensans-bold, sans-serif;
+	margin: 12px 0;
+   color: #3d4145;
+   display: block;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+   font-size: 15px;
+   color: #737373;
+}
+
+input[type="checkbox"] { display: inline; }
+
+label span,
+legend span {
+	color: #8B9798;
+   font: 14px/24px opensans-regular, sans-serif;
+}
+
+
+/* desktop */
+.container {
+         background: #fff url(../images/patterns/grey.png);
+         padding: 90px 0 102px 0;
+      }
+.row {
+   width: 96%;
+   max-width: 1008px;
+   margin: 0 auto;
+
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+.narrow .row { max-width: 976px; }
+
+/* row clearing */
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+}
+.row:after {
+    clear: both;
+}
+
+/* removed gutters */
+.row.collapsed .col,
+col.collapsed { padding: 0; }
+
+
+/* column widths */
+.row .one-twelfth,     .row .g-1     { width: 8.33333%; }
+.row .one-sixth,       .row .g-2     { width: 16.66667%; }
+.row .one-fourth,      .row .g-3     { width: 25%; }
+.row .one-third,       .row .g-4     { width: 33.33333%; }
+.row .five-twelfths,   .row .g-5     { width: 41.66667%; }
+.row .half,            .row .g-6     { width: 50%; }
+.row .seven-twelfths,  .row .g-7     { width: 58.33333%; }
+.row .two-thirds,      .row .g-8     { width: 66.66667%; }
+.row .three-fourths,   .row .g-9     { width: 75%; }
+.row .five-sixths,     .row .g-10    { width: 83.33333%; }
+.row .eleven-twelfths, .row .g-11    { width: 91.66667%; }
+.row .full,            .row .g-12    { width: 100%; }
+
+/* Offsets */
+.row .offset-1    { margin-left: 8.33333%; }
+.row .offset-2    { margin-left: 16.66667%; }
+.row .offset-3    { margin-left: 25%; }
+.row .offset-4    { margin-left: 33.33333%; }
+.row .offset-5    { margin-left: 41.66667%; }
+.row .offset-6    { margin-left: 50%; }
+.row .offset-7    { margin-left: 58.33333%; }
+.row .offset-8    { margin-left: 66.66667%; }
+.row .offset-9    { margin-left: 75%; }
+.row .offset-10   { margin-left: 83.33333%; }
+.row .offset-11   { margin-left: 91.66667%; }
+
