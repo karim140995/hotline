@@ -8,19 +8,18 @@
                           {
                             require('DB.php');
                             $connector= new mysql_connector();
-                            $connector->connect(); 
+                            $connector->login(); 
                             $mail=$_POST['cEmail'];
                             $passw=$_POST['cPassword'];
-                            $query = "SELECT address, hashed_password 
-                                  FROM USERS,email_addresses
-                                  WHERE  address like '$mail'
-                                  AND  hashed_password like '$passw'
-                                  and USERS.id= email_addresses.user_id ";
+                            $query = "SELECT login, password 
+                                  FROM USER
+                                  WHERE  login like '$mail'
+                                  AND    password like '$passw'";
                             $mysql=mysql_query($query) or die ('error requete');
     					              $connector->disconnect();
                             
                             if (mysql_num_rows($mysql) > 0) {
-                                header("Location:pages/index.html");
+                                header("Location:pages/index.php");
                             } else{
                                 echo "login ou mot de passe incorrect";
                             }

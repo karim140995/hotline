@@ -49,7 +49,7 @@ function myFunction() {
 					<fieldset>
                   <div>
 						   <label for="cEmail">Email <span class="required">*</span></label>
-						   <input name="cEmail" type="email" id="cEmail" size="35" value="" />
+						   <input name="cEmail" type="text" id="cEmail" size="35" value="" />
                   </div>
 
                   <div>

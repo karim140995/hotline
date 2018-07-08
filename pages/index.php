@@ -11,7 +11,7 @@
 
     <title>BFI issues dashboard</title>
 
-    <!-- Bootstrap Core CSS -->
+   <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
@@ -22,6 +22,9 @@
 
     <!-- Morris Charts CSS -->
     <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom Fonts _    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -62,7 +65,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">BFI Issue Dashboard</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -291,7 +294,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class=" fa fa-bank fa-fw"></i> Home</a>
+                            <a href="index.php"><i class=" fa fa-bank fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -306,77 +309,17 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.php"><i class="fa fa-bug"></i> Issues List</a>
                         </li>
+
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="tables.php"><i class="fa fa-users"></i> Clients List</a>
                         </li>
+
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a href="tables.php"><i class="fa fa-cogs"></i> Projects List</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -482,31 +425,35 @@
                         </a>
                     </div>
                 </div>
-                
-
+          
                         <!-- /.panel -->
                     <div class="panel panel-body">
                         <div class="panel panel-body"">
                             
                         
                     </div>
-                     
-                     <div class="panel-body"  align="center">
+                 
+
+                    <div class="row">
+
+
+
+                     <div class="panel-body">
                           <div class="col-lg-10">
-                            <div class="panel panel-default">
+                            <div class="panel panel-default ">
                         <div class="panel-heading">
-                          <h4>  Issues per Priority</h4>
+                          <h3> Highest Priorities </h3>
                         </div>
                             <div class="table-responsive">
-                                <table  class="table table-striped table-bordered table-hover" width="100%" CELLPADDING="2" CELLSPACING="2" color="black">
+                                <table  class="table table-striped table-bordered" width="100%" CELLPADDING="2" CELLSPACING="2" color="black">
                                     <thead>
                                         <tr>
                                             
-                                            <th>Client FirstName</th>
-                                            <th>Client LastName</th>
+                                            <th>Client First Name</th>
+                                            <th>Client Last Name</th>
                                             <th>Subject</th>
-                                            <th>Issue's Description</th>
-                                            <th>Project's Name</th>
+                                            <th>Issue Description</th>
+                                            <th>Project Name</th>
                                             <th>Priority</th>
                                           
                                         </tr>
@@ -514,14 +461,32 @@
                                     <tbody>
                                     <?php     
                                         while ($row = mysql_fetch_array($order_per_enumeration,MYSQLI_NUM)) {
+
+                                        switch ($row[4]) {
+                                            case "Low":
+                                                $bg="info";
+                                                break;
+                                            case "Normal":
+                                                $bg="success";
+                                                break;
+                                            case "High":
+                                                $bg="warning";
+                                                break;
+                                             case "Urgent":
+                                                $bg="danger";
+                                                break;
+                                             case "Immediate":
+                                                $bg="immediate";
+                                                break;      
+                                        }       
                                         echo " 
                                         <tr class='success'>
-                                            <td>$row[0]</td>
-                                            <td>$row[1]</td>
-                                            <td>$row[2]</td>
-                                            <td>$row[3]</td>
-                                            <td>$row[4]</td>
-                                            <td>$row[5]</td>
+                                            <td class=$bg>$row[0]</td>
+                                            <td class=$bg>$row[1]</td>
+                                            <td class=$bg>$row[2]</td>
+                                            <td class=$bg>$row[3]</td>
+                                            <td class=$bg>$row[5]</td>
+                                            <td class=$bg>$row[4]</td>
                                         </tr>";}
                                      ?>
 
@@ -530,25 +495,24 @@
                                 </table>
                             </div>
                         </div>
-</div>
-</div>
-
-   <div class="panel-body"  align="center">
+                    </div>
+                    </div>
+   <div class="panel-body"  >
                           <div class="col-lg-10">
                             <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <h4>  Issues per Priority</h4>
+                        <div class="panel-heading" >
+                            <h3> Closest Deadlines </h3>
                         </div>
                             <div class="table-responsive">
                                 <table  class="table table-striped table-bordered table-hover" width="100%" CELLPADDING="2" CELLSPACING="2" color="black">
                                     <thead>
                                         <tr>
                                             
-                                            <th>Client FirstName</th>
-                                            <th>Client LastName</th>
+                                            <th>Client First Name</th>
+                                            <th>Client Last Name</th>
                                             <th>Subject</th>
-                                            <th>Issue's Description</th>
-                                            <th>Project's Name</th>
+                                            <th>Issue Description</th>
+                                            <th>Project Name</th>
                                             <th>Deadline</th>
                                           
                                         </tr>
@@ -576,10 +540,12 @@
                                 </table>
                             </div>
                         </div>
-</div>
-</div>
+                    </div>
+                    </div>
 
             </div>
+        </div>
+    </div>
             <!-- /.row -->
           
                                 <!-- /.col-lg-4 (nested) -->
