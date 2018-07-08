@@ -38,7 +38,7 @@ class mainController
             //Due date tables
             $this->priorityDao=$priorityDao;
             $this->order_per_enumeration=$priorityDao->order_per_enumeration() ;
-            $this->order_per_duedate=$priorityDao->order_per_duedate();      
+            $this->$order_per_duedate=$priorityDao->order_per_duedate();      
 
     }
 
